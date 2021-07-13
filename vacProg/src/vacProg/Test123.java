@@ -1,5 +1,6 @@
 package vacProg;
 
-public class Test123 {
-
+public class Test123 
+{
+	
 }
