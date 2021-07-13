@@ -1,16 +1,24 @@
 package vacProg;
 import java.util.*;
 
-<<<<<<< HEAD
 public class Test123
 {
-	
+   public static void main (String args[]) {
+   Scanner identity = new Scanner(System.in);
    
+   String name;
+   int ic;
+   String vac;
    
-=======
-public class Test123 
-{
-	
->>>>>>> branch 'master' of https://github.com/Kyziq/CSC186-Vaccination-Program.git
+   System.out.println("Please enter your name : ");
+   name = identity.next();
+   
+   System.out.println("Please enter your identification card(IC) number : ");
+   ic = identity.nextInt();
+   
+   System.out.println("Have you been vaccinated before ? : ");
+   vac = identity.next();
+   }
 }
+
 ///h3eloo
