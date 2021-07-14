@@ -1,14 +1,18 @@
 package vacProg;
 
+import java.util.*;
+
 public class Functions 
 {
-	public CheckInput(String input)
+	public void CheckYesNo(String word)
 	{
-		   while (!vac.equalsIgnoreCase("Yes") || !vac.equalsIgnoreCase("No"))
-		   {
-			   if(vac.equalsIgnoreCase("Yes") || vac.equalsIgnoreCase("No")) break;
-			   System.out.println("Wrong answer! Try again.");
-			   vac = input.next();
-		   }
+		Scanner input = new Scanner(System.in);
+		while (!word.equalsIgnoreCase("Yes") || !word.equalsIgnoreCase("No"))
+		{
+			if(word.equalsIgnoreCase("Yes") || word.equalsIgnoreCase("No")) break;
+			System.out.println("Wrong answer! Try again.");
+			word = input.next();
+		}
+		input.close();
 	}
 }
