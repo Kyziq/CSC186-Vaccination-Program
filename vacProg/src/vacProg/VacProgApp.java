@@ -5,7 +5,6 @@ import java.util.*;
 
 public class VacProgApp
 {
-
 	public static void main (String[] args) throws Exception
 	{
 		Functions f = new Functions();
@@ -68,16 +67,16 @@ public class VacProgApp
 				System.out.println("Dear " +name+ " (" +IC+ "), your reason for not registering yet in MySejahtera is: " +reason+ ".");
 				System.out.println("Your reason has been recorded. Your phone number is " +phoNum+ ". KPM will contact you soon. Thank you.");
 			}
-	   }
-	   pr.println("Name: \t" +name);
-	   pr.println("Identification card: \t" +IC);
-	   pr.println("Vaccination Status: \t" +vacStatus);
-	   pr.println("Symptom Status: \t" +sympStatus);
-	   pr.println("Reason for not registering MySejahtera: \t" +reason);
-	   pr.println("Phone number: \t" +phoNum);
+		}
+		pr.println("Name: \t" +name);
+		pr.println("Identification card: \t" +IC);
+		pr.println("Vaccination Status: \t" +vacStatus);
+		pr.println("Symptom Status: \t" +sympStatus);
+		pr.println("Reason for not registering MySejahtera: \t" +reason);
+		pr.println("Phone number: \t" +phoNum);
 	   
-	   input.close();
-	   pr.close();
+		input.close();
+		pr.close();
 	}
 }
 
