@@ -48,8 +48,5 @@ public class UserInfo
 		public String getVacStatus () {return vacStatus;}
 		public String getSympStatus () {return sympStatus;}
 		
-		
-
-		
 	}
 }
