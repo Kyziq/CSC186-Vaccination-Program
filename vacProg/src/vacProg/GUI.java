@@ -11,17 +11,17 @@ import javax.swing.SwingUtilities;
 
 public class GUI extends userInfo implements ActionListener 
 {
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {         
-                createAndShowGUI();
-            }
-        });
-    }
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {         
+				createAndShowGUI();
+			}
+		});
+	}
 
-    private static void createAndShowGUI()
-    {
+	private static void createAndShowGUI()
+	{
 		frame1.setSize(400, 250);
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
