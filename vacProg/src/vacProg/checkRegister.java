@@ -3,11 +3,11 @@ package vacProg;
 public class checkRegister extends userInfo 
 {
 	// n = name, i = IC, vs = vaccine status, ss = symptom status
-    public checkRegister (String n, String i, String vs, boolean r,  String pn) // Normal
-    {
-    	super(n, i, vs);
-        userRegStatus = r;
-    }
+	public checkRegister (String n, String i, String vs, boolean r,  String pn) // Normal
+	{
+		super(n, i, vs);
+		userRegStatus = r;
+	}
 	public void setReason (String n, String i, String vs, boolean r, String pn) // Mutator(setter)
 	{
 		userRegStatus = r;

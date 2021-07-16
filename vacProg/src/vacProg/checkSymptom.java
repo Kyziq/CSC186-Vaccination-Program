@@ -3,16 +3,16 @@ package vacProg;
 public class checkSymptom extends userInfo
 {
 	// n = name, i = IC, vs = vaccine status, ss = symptom status
-    public checkSymptom (String n, String i, String vs, boolean ss) // Normal
-    {
-    	super(n, i, vs);
-        userSympStatus = ss;
-    }
+	public checkSymptom (String n, String i, String vs, boolean ss) // Normal
+	{
+		super(n, i, vs);
+		userSympStatus = ss;
+	}
 	public void setYes (String n, String i, String vs, boolean ss) // Mutator (setter)
 	{
 		userSympStatus  = ss;
 	}
-    // Accessor(getter)
+	// Accessor(getter)
 	public boolean getSympStatus () { return userSympStatus ; }
 	
 	public void resultSymp() 
@@ -31,6 +31,5 @@ public class checkSymptom extends userInfo
 			panelFinal.add(finalText);
 			frameFinal.add(panelFinal);
 		}
-	 }
+	}
 }
-

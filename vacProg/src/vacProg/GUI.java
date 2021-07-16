@@ -111,7 +111,7 @@ public class GUI extends userInfo implements ActionListener
 		
 		frame1.add(panel1);
 		frame1.setVisible(true);
-    }
+	}
     
 	@Override
 	public void actionPerformed(ActionEvent e)
