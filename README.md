@@ -7,5 +7,5 @@ Simple program for our course CSC186 - Object Oriented Programming
 * [Harith Iqbal](https://github.com/mishumiyamizu)
 * [Khairul Haziq](https://github.com/Kyziq)
 
-## Acknowledgments
+## Acknowledgment
 * Sir Ahmad Afif for teaching us JAVA language along this semester.
