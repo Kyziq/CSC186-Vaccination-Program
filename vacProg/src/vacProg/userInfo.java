@@ -1,40 +1,64 @@
 package vacProg;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 public class userInfo 
 {
-	// n = name, i = IC, vs = vaccine status, ss = symptom status
-	private String name; 
-	private String ic;
-	private boolean vacStatus;
+	// Variables
+	public static String userName="", userIC="", userVac="", userSymp="", userReg="", userReason="", userPhone="", userVacStatus="";
+	
+	public static boolean userSympStatus, userRegStatus;
+	
+	public static JLabel nameLabel, icLabel, vacLabel, sympLabel, regLabel;
+	public static JLabel finalText, finalText2, finalText3, finalText4;
+	
+	public static JTextField nameText, icText, vacText, sympText, regText, reasonText, phoneText;
+
+	public static JButton submit1, submitVacYes, submitVacNo, submitFinal; 
+	
+	// Panel, Frames
+	final static JFrame frame1 = new JFrame("Vaccination Program");
+	static JPanel panel1 = new JPanel();
+	final static JFrame frameVacYes = new JFrame("Vaccination Program");
+	static JPanel panelVacYes = new JPanel();
+	final static JFrame frameVacNo = new JFrame("Vaccination Program");
+	static JPanel panelVacNo = new JPanel();
+	final static JFrame frameFinal = new JFrame("Vaccination Program");
+	static JPanel panelFinal = new JPanel();
 		
-	public userInfo()// Default
+	public userInfo() // Default
 	{
-		name = " "; 
-		ic = " ";
-		vacStatus = false;
+		userName = ""; 
+		userIC = "";
+		userVacStatus = "";
 	}
-	public userInfo (String n, String i, boolean vs)// Normal
+	public userInfo (String n, String i, String vs) // Normal
 	{
-		name = n; 
-		ic = i;
-		vacStatus = vs;
+		userName = n; 
+		userIC = i;
+		userVacStatus = vs;
 	}
-	public void setUser (String n, String i, boolean vs)// Mutator
+	public void setUser (String n, String i, String vs) // Mutator
 	{
-		name = n; 
-		ic = i;
-		vacStatus = vs;
+		userName = n; 
+		userIC = i;
+		userVacStatus = vs;
 	}
-	 //accessor(getter)
-	public String getName () { return name; }
-	public String getIc () { return ic; }
-	public boolean getVacStatus () { return vacStatus; }
-	public void statusVac() 
+	 // Accessor(getter) / Functions / Methods
+	public void HideAndShowFrame(JFrame input1, JFrame input2)
 	{
-		if (vacStatus == true)
-			System.out.println("Vaccinated");
-		else if (vacStatus == false)
-			System.out.println("Unvaccinated");
+		input1.setVisible(false);
+		input2.setVisible(true);
+		input2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	public String toString () { return "Dear " + name + "(" + ic + ")";}
+	public static String getUserVacStatus() { return userVacStatus; }
+	public static void setUserVacStatus(String userVacStatus) { GUI.userVacStatus = userVacStatus; }
+	
+	public static String convertToMultiline(String orig) { return "<html>" + orig.replaceAll("\n", "<br>"); }
+	public String getName () { return userName; }
+	public String getIC () { return userIC; }
 }

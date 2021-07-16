@@ -6,49 +6,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-public class GUI implements ActionListener {
-	
-	// Variables
-	private static String userName = "", userIC = "", userVac = "", userSymp = "", userVacStatus = "", userReg = "", 
-			userReason = "", userPhone = "";
-	
-	private static JLabel nameLabel;
-	private static JLabel icLabel;
-	private static JLabel vacLabel;
-	private static JLabel sympLabel;
-	private static JLabel finalText;
-	private static JLabel finalText2;
-	private static JLabel finalText3;
-	private static JLabel finalText4;
-	private static JLabel regLabel;
-	
-	private static JTextField nameText;
-	private static JTextField icText;
-	private static JTextField vacText;
-	private static JTextField sympText;
-	private static JTextField regText;
-	private static JTextField reasonText;
-	private static JTextField phoneText;
-	
-	private static JButton submit1; // panel1
-	private static JButton submitVacYes; 
-	private static JButton submitVacNo; 
-	private static JButton submitFinal; 
-	
-	// Panel, Frames
-	final static JFrame frame1 = new JFrame("Vaccination Program");
-	static JPanel panel1 = new JPanel();
-	final static JFrame frameVacYes = new JFrame("Vaccination Program");
-	static JPanel panelVacYes = new JPanel();
-	final static JFrame frameVacNo = new JFrame("Vaccination Program");
-	static JPanel panelVacNo = new JPanel();
-	final static JFrame frameFinal = new JFrame("Vaccination Program");
-	static JPanel panelFinal = new JPanel();
-	
+public class GUI extends userInfo implements ActionListener 
+{
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -144,105 +106,66 @@ public class GUI implements ActionListener {
 		panelVacNo.add(submitVacNo);
 		
 		submitFinal = new JButton("Submit");
-		submitFinal .setBounds(10, 100, 80, 25);
-		submitFinal .addActionListener(new GUI());
+		submitFinal.setBounds(10, 100, 80, 25);
+		submitFinal.addActionListener(new GUI());
 		
 		frame1.add(panel1);
 		frame1.setVisible(true);
     }
     
 	@Override
-	public void actionPerformed(ActionEvent e) 
+	public void actionPerformed(ActionEvent e)
 	{
 		userName = nameText.getText();
 		userIC = icText.getText();
 		userVac = vacText.getText();
+		
 		// Vaccine
 		if (userVac.equalsIgnoreCase("Yes"))
 	   	{
-			setUserVacStatus("Vaccinated");
 			HideAndShowFrame(frame1, frameVacYes);
 			frameVacYes.setSize(400, 200);
 			frameVacYes.add(panelVacYes);
-			
 			userSymp = sympText.getText();
-
+			setUserVacStatus("Vaccinated");
+			
 			if (userSymp.equalsIgnoreCase("Yes"))
 			{
-				HideAndShowFrame(frameVacYes, frameFinal);
-				frameFinal.setSize(400, 200);
-				
-				finalText.setText(convertToMultiline("Dear " +userName+ " (" +userIC+ "), you have a symptom. \nPlease consult a doctor very soon. Thank you."));
-				panelFinal.add(finalText);
-				
-				frameFinal.add(panelFinal);
+				userSympStatus = true;
+				checkSymptom cs = new checkSymptom(userName, userIC, userVacStatus, userSympStatus);
+				HideAndShowFrame(frameVacYes, frameFinal); 
+				cs.resultSymp();
 			}
 			else if (userSymp.equalsIgnoreCase("No"))
 			{
+				userSympStatus = false;
+				checkSymptom cs = new checkSymptom(userName, userIC, userVacStatus, userSympStatus);
 				HideAndShowFrame(frameVacYes, frameFinal);
-				frameFinal.setSize(400, 200);
-				
-				finalText.setText(convertToMultiline("Dear " +userName+ " (" +userIC+ "), congratulations, \nYou have been vaccinated. Thank you."));
-				panelFinal.add(finalText);
-				
-				frameFinal.add(panelFinal);
+				cs.resultSymp();
 			}
 	   	}
 		else if (userVac.equalsIgnoreCase("No"))
 	   	{
-			setUserVacStatus("Unvaccinated");
 			HideAndShowFrame(frame1, frameVacNo);
 			frameVacNo.setSize(400, 200);
 			frameVacNo.add(panelVacNo);
-			
 			userReg = regText.getText();
+			setUserVacStatus("Unvaccinated");
 			
 			if (userReg.equalsIgnoreCase("Yes"))
 			{
+				userRegStatus = true;
+				checkRegister cr = new checkRegister(userName, userIC, userVacStatus, userRegStatus, userPhone);
 				HideAndShowFrame(frameVacNo, frameFinal);
-				frameFinal.setSize(400, 200);
-				
-				finalText.setText(convertToMultiline("Dear " +userName+ " (" +userIC+ "), \nkindly wait your turn to be vaccinated. Thank you."));
-				panelFinal.add(finalText);
-				
-				frameFinal.add(panelFinal);
+				cr.resultReg();
 			}
 			else if (userReg.equalsIgnoreCase("No"))
 			{
+				userRegStatus = false;
+				checkRegister cr = new checkRegister(userName, userIC, userVacStatus, userRegStatus, userPhone);
 				HideAndShowFrame(frameVacNo, frameFinal);
-				frameFinal.setSize(600, 300);
-				
-				finalText.setText(convertToMultiline("State your reason for not \nregistering on MySejahtera"));
-				panelFinal.add(finalText);
-				panelFinal.add(reasonText);
-				
-				finalText2.setText(convertToMultiline("State your phone number"));
-				panelFinal.add(finalText2);
-				panelFinal.add(phoneText);
-				
-				panelFinal.add(submitFinal);
-				frameFinal.add(panelFinal);
-		
-				userReason = reasonText.getText();
-				userPhone = phoneText.getText();
-				if(userReason != null && userPhone != null && !userReason.isEmpty() && !userPhone.isEmpty())
-				{
-					panelFinal.add(finalText3);
-					finalText3.setText(convertToMultiline("Dear " +userName+ " (" +userIC+ "), your reason for not registering yet in MySejahtera is:\n " +userReason+ "."));
-					panelFinal.add(finalText4);
-					finalText4.setText(convertToMultiline("Your reason has been recorded. Your phone number is " +userPhone+ ".\nKPM will contact you soon. Thank you."));
-				}
+				cr.resultReg();
 			}
 	   	}
 	}	
-	public void HideAndShowFrame(JFrame input1, JFrame input2)
-	{
-		input1.setVisible(false);
-		input2.setVisible(true);
-		input2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-	
-	public static String convertToMultiline(String orig) { return "<html>" + orig.replaceAll("\n", "<br>"); }
-	public static String getUserVacStatus() { return userVacStatus; }
-	public static void setUserVacStatus(String userVacStatus) { GUI.userVacStatus = userVacStatus; }
 }

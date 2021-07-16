@@ -1,6 +1,6 @@
 package vacProg;
 
-public class MySejahtera extends newuserInfo {
+public class MySejahtera extends userInfo {
 	private boolean register;
 	private String phoneNumber;
 	
