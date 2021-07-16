@@ -47,6 +47,7 @@ public class userInfo
 		userName = n; 
 		userIC = i;
 		userVacStatus = vs;
+		//test harith
 	}
 	 // Accessor(getter) / Functions / Methods
 	public void HideAndShowFrame(JFrame input1, JFrame input2)
