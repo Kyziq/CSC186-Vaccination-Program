@@ -7,11 +7,9 @@ public class VacProgApp
 {
 	public static void main (String[] args) throws Exception
 	{
-		//Functions f = new Functions();
+		// GUI.main(args);
+		
 		//newuserInfo ne = new newuserInfo();
-		
-		
-		
 		Scanner input = new Scanner(System.in);
 		BufferedWriter br = new BufferedWriter(new FileWriter("C:\\Users\\User\\Documents\\DetailUser.txt"));
 		PrintWriter pr = new PrintWriter(br);
@@ -27,15 +25,11 @@ public class VacProgApp
 		System.out.println("Enter your identification card (IC) number: ");
 		IC = input.next();
 		
-   
 		System.out.println("Have you been vaccinated before (at least first dose)? (Yes/No): ");
 		vac = input.next();
-	   
-		//f.CheckYesNo(vac);
-		
+
 		if (vac.equalsIgnoreCase("Yes"))
 	   	{
-			
 			vacStatus = true;
 	   
 			System.out.println("Are you exhibiting any of the symptoms? \n(Cough/Difficulty/Loss of smell/Loss of taste) (Yes/No):");
@@ -80,7 +74,3 @@ public class VacProgApp
 		pr.close();
 	}
 }
-			//f.CheckYesNo(reg);
-		
-
-
