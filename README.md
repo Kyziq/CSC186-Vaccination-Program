@@ -8,4 +8,4 @@ Simple program for our course CSC186 - Object Oriented Programming
 * [Khairul Haziq](https://github.com/Kyziq)
 
 ## Acknowledgment
-* Sir Ahmad Afif for teaching us JAVA language along this semester.
+* Thank you Sir Ahmad Afif for teaching us JAVA language this semester. We truly appreciate it
