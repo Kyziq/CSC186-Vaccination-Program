@@ -5,7 +5,8 @@ public class userInfo
 	// All variables for user
 	private String userName, userIC, userReason, userSympText, userVacText, userRegisteredText;
 	private long userPhone;
-	private boolean userVacStatus, userSympStatus, userRegisteredStatus;
+	private boolean userVacStatus, userSympStatus; 
+	//private boolean userRegisteredStatus;
 		
 	public userInfo() // Default
 	{
@@ -19,7 +20,7 @@ public class userInfo
 
 		userVacStatus = false;
 		userSympStatus = false;
-		userRegisteredStatus = false;
+		//userRegisteredStatus = false;
 	}
 		
 	// Setter
@@ -48,9 +49,9 @@ public class userInfo
 	public void setSympText(String sympT) {
 		this.userSympText = sympT;
 	}
-	public void setRegisteredStatus(boolean regS) {
+	/*public void setRegisteredStatus(boolean regS) {
 		this.userRegisteredStatus = regS;
-	}
+	}*/
 	public void setRegisteredText(String regT) {
 		this.userRegisteredText = regT;
 	}
@@ -80,9 +81,9 @@ public class userInfo
 	public String getSympText() {
 		return this.userSympText;
 	}
-	public boolean getRegisteredStatus() {
+	/*public boolean getRegisteredStatus() {
 		return this.userRegisteredStatus;
-	}
+	}*/
 	public String getRegisteredText() {
 		return this.userRegisteredText;
 	}

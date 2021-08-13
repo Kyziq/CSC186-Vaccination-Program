@@ -50,12 +50,12 @@ public class MainCode
 			// Check if registered
 			if (uI.getRegisteredText().equalsIgnoreCase ("Yes")) 
 			{
-				uI.setRegisteredStatus(true);
+				//uI.setRegisteredStatus(true);
 				System.out.println(uI.toString() +  "kindly wait your turn to be vaccinated. Thank you.");
 			}
 			else if (uI.getRegisteredText().equalsIgnoreCase("No")) 
 			{
-				uI.setRegisteredStatus(false);
+				//uI.setRegisteredStatus(false);
 				
 				System.out.println("State your reason for not registering on MySejahtera: ");
 				uI.setReason(input.nextLine());
