@@ -29,3 +29,25 @@ Develop a Java language programming regarding a vaccination program in Malaysia 
 “Dear Ahmad Afif Bin Ahmarofi (89xxxx02xxxx), your reason for not registering yet in MySejahtera is: I don’t know how to register. 
 Your reason has been recorded. Your phone number is 019555555. KPM will contact you soon. Thank you.” (Marks 30)
 
+## Output
+1.
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/jWkkS0d/11.png" alt="11" border="0" /></a>
+
+2.
+ 
+
+3.
+ 
+
+4.
+ 
+
+5.
+ 
+
+6.
+ 
+
+Output on text document (.txt file) for number 6
+ 
+
