@@ -44,7 +44,6 @@ public class MainCode
 		else if (uI.getVacText().equalsIgnoreCase("No"))
 		{
 			uI.setVacStatus(false);
-			
 			System.out.println("Have you registered on MySejahtera application? (Yes/No): ");
 			uI.setRegisteredText(input.next());
 			
@@ -73,24 +72,39 @@ public class MainCode
 		BufferedWriter br = new BufferedWriter(new FileWriter("D:\\Users\\Asus\\Desktop\\UserDetails.txt"));
 		PrintWriter pr = new PrintWriter(br);
 		
-		pr.println("Name: \t" +uI.getName());
-		pr.println("Identification card: \t" +uI.getIC());
+		pr.println("Name: \t" +uI.getName()); // Name
+		pr.println("Identification card: \t" +uI.getIC()); // IC
 		
-		if (uI.getVacStatus() == true)
+		if (uI.getVacStatus() == true) {
 			uI.setVacText("Vaccinated");
-		else if (uI.getVacStatus() == false)
+		}
+		else if (uI.getVacStatus() == false) {
 			uI.setVacText("Not vaccinated");
-		pr.println("Vaccination Status: \t" +uI.getVacText());
+		}
+		pr.println("Vaccination Status: \t" +uI.getVacText()); // VacStatus
 		
-		if (uI.getSympStatus() == true)
-			uI.setSympText("Have symptoms");
-		else if (uI.getSympStatus() == false)
-			uI.setSympText("No symptoms");
-		pr.println("Symptom Status: \t" +uI.getSympText());
+		if (uI.getVacStatus() == true) {
+			if (uI.getSympStatus() == true) {
+				uI.setSympText("Have symptoms");
+			}
+			else if (uI.getSympStatus() == false) {
+				uI.setSympText("No symptoms");
+			}
+		}
+		else if (uI.getVacStatus() == false) {
+			uI.setSympText("Not available");
+		}
+		pr.println("Symptom Status: \t" +uI.getSympText()); // Symp Status
 		
-		pr.println("Reason for not registering MySejahtera: \t" +uI.getReason());
-		pr.println("Phone number: +60\t" +uI.getPhone());
-		
+		// Reason, number
+		if (uI.getVacStatus() == false) {
+			pr.println("Reason for not registering MySejahtera: \t" +uI.getReason());
+			pr.println("Phone number: \t+60" +uI.getPhone());
+		}
+		else {
+			pr.println("Reason for not registering MySejahtera: \tNot available");
+			pr.println("Phone number: \tNot available");
+		}
 		pr.close();
 		input.close();
 	}
