@@ -1,24 +1,25 @@
 package vacProg;
 
-public class checkSymptom extends userInfo{
-
-	private boolean sympStatus; 
-    
-    
-    
-    public checkSymptom (String n, String i, boolean vs, boolean ss)//normal
-    {
-  	 super(n, i, vs);
-       sympStatus = ss;
-    }
-	
-	  public void setYes (String n, String i, boolean vs, boolean ss)//mutator(setter)
+public class Yes extends newuserInfo
+{
+   
+      private boolean sympStatus; 
+      
+      
+     
+      public Yes (String n, String i, String pn, String vs, boolean ss)//normal
+      {
+    	 super(n, i, pn, vs);
+         sympStatus = ss;
+      }
+  	
+  	  public void setYes (String n, String i, String pn, String vs, boolean ss)//mutator(setter)
 	  {
 	 	
 		sympStatus = ss;
 		
 	  }
-    //accessor(getter)
+      //accessor(getter)
 	  public boolean getSympStatus () {return sympStatus;}
 	
 	  public String resultsymp() {
@@ -30,4 +31,7 @@ public class checkSymptom extends userInfo{
 			  return null;
 	  }
 	  
+	 
+   
+   
 }
