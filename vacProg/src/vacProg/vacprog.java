@@ -8,8 +8,6 @@ public class VacProgApp
 		//Functions f = new Functions();
 		//newuserInfo ne = new newuserInfo();
 		
-		
-		
 		Scanner input = new Scanner(System.in);
 		BufferedWriter br = new BufferedWriter(new FileWriter("C:\\Users\\User\\Documents\\DetailUser.txt"));
 		PrintWriter pr = new PrintWriter(br);

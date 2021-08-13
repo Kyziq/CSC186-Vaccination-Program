@@ -4,8 +4,6 @@ public class checkSymptom extends newuserInfo{
 
 	private boolean sympStatus; 
     
-    
-    
     public checkSymptom (String n, String i, boolean vs, boolean ss)//normal
     {
   	 super(n, i, vs);

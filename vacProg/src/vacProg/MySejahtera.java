@@ -4,9 +4,6 @@ public class MySejahtera extends newuserInfo {
  
 	private boolean register;
 	private String phoneNumber;
-	
-    
-    
     
     public MySejahtera (String n, String i, boolean vs, boolean r,  String pn)//normal
     {
@@ -32,7 +29,5 @@ public class MySejahtera extends newuserInfo {
 			  return  super.toString() + " your reason for not registering yet in MySejahtera :" + r + "\n" + " your phone number is " + phoneNumber + " KPM will contact you soon. Thank you.";
 		  else 
 			  return null;
-	  }
-	  
-	  
+	  }  
 }
